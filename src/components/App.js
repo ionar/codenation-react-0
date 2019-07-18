@@ -12,11 +12,17 @@ class App extends Component {
       searchString: ''
     };
   }
+  
+  onChangeInput = (e) => {
+    this.setState({
+      searchString: e.target.value
+    })
+  }
 
   render() { 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar value={this.state.searchString} onChange={this.onChangeInput} />
         <div className="container mt-10">
           <div className="row">
             {this.recipes.map(recipe =>(
