@@ -21,10 +21,16 @@ class App extends Component {
     console.log(this.state.searchString);
   }
 
+//  filtro = (termo) => {
+//    return this.recipes.filter( recipe => 
+//      recipe.title.toLowerCase().indexOf(termo.toLowerCase()) || recipe.ingredients.toLowerCase().indexOf(termo.toLowerCase())
+//    )
+//  }
+
   filtro = (termo) => {
     return this.recipes.filter( recipe => 
-      recipe.title.toLowerCase().indexOf(termo.toLowerCase()) || recipe.ingredients.toLowerCase().indexOf(termo.toLowerCase())
-    )
+      recipe.title.toLowerCase().indexOf(termo.toLowerCase()) > -1 || 
+      recipe.ingredients.toLowerCase().indexOf(termo.toLowerCase()) > -1 )
   }
 
   render() { 
